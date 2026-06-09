@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdPilot — AI-реклама в Meta на автопилоте</title>
+  <meta name="description" content="AI-агент запускает рекламу в Facebook и Instagram за вас. Claude 4 + Gemini + GPT-4. Первая кампания бесплатно.">
+  <meta property="og:title" content="AdPilot — AI-реклама в Meta">
+  <meta property="og:description" content="Опишите бизнес — AI напишет объявления и запустит кампанию автоматически">
+  <meta property="og:image" content="https://rozetka.space/og.png">
+  <meta property="og:url" content="https://rozetka.space">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+
+<div class="bg-mesh"></div>
+<canvas id="particles"></canvas>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-icon">🚀</div>
+    <span class="logo-text">AdPilot</span>
+  </a>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="uk">UK</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="pl">PL</button>
+    </div>
+    <a href="https://t.me/AdPilot_bot" class="btn-nav" data-t="nav_try">Попробовать</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <span class="floating-icon fi-1">🎯</span>
+  <span class="floating-icon fi-2">💡</span>
+  <span class="floating-icon fi-3">📊</span>
+  <span class="floating-icon fi-4">💸</span>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span>●</span>
+      <span data-t="badge">🚀 Powered by Claude 4 · Gemini · GPT-4</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span data-t="hero_title_1">AI-агент который</span><br>
+      <span class="gradient-text" id="typewriter-word">запускает рекламу</span><span class="cursor"></span><br>
+      <span data-t="hero_title_3">в Meta за вас</span>
+    </h1>
+
+    <p class="hero-sub" data-t="hero_sub">
+      Опишите бизнес — AI напишет объявления, подберёт аудиторию и запустит кампанию
+    </p>
+
+    <div class="hero-buttons">
+      <a href="https://t.me/AdPilot_bot" class="btn-primary" data-t="btn_start">🚀 Начать бесплатно</a>
+      <a href="#how" class="btn-secondary" data-t="btn_demo">Смотреть как работает</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num" data-t="stat_1_num" data-count="3">3</span>
+        <span class="stat-label" data-t="stat_1_label">AI-модели</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-t="stat_2_num" data-count="19">19</span>
+        <span class="stat-label" data-t="stat_2_label">Ниш бизнеса</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-t="stat_3_num">5</span>
+        <span class="stat-label" data-t="stat_3_label">Языков</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-t="stat_4_num">A/B</span>
+        <span class="stat-label" data-t="stat_4_label">Авто-тест</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="how">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-t="how_tag">КАК ЭТО РАБОТАЕТ</div>
+      <h2 data-t="how_title">Три шага до запуска рекламы</h2>
+      <p class="section-sub" data-t="how_sub">Никаких агентств, никакой сложности.</p>
+    </div>
+    <div class="steps">
+      <div class="step delay-1">
+        <div class="step-num" data-t="step1_num">ШАГ 1</div>
+        <div class="step-icon" data-t="step1_icon">📋</div>
+        <h3 data-t="step1_title">Расскажите о бизнесе</h3>
+        <p data-t="step1_text">Ответьте на вопросы AI-консультанта в Telegram. Занимает 5-10 минут.</p>
+      </div>
+      <div class="step delay-3">
+        <div class="step-num" data-t="step2_num">ШАГ 2</div>
+        <div class="step-icon" data-t="step2_icon">🤖</div>
+        <h3 data-t="step2_title">AI создаёт кампанию</h3>
+        <p data-t="step2_text">Claude, Gemini и GPT-4 соревнуются. Claude-ревьюер отбирает только 8+/10.</p>
+      </div>
+      <div class="step delay-5">
+        <div class="step-num" data-t="step3_num">ШАГ 3</div>
+        <div class="step-icon" data-t="step3_icon">🚀</div>
+        <h3 data-t="step3_title">Запуск в Meta одним кликом</h3>
+        <p data-t="step3_text">AdPilot сам создаёт кампанию, группы объявлений и загружает тексты.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- ── FEATURES ── -->
+<section id="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-t="feat_tag">ВОЗМОЖНОСТИ</div>
+      <h2 data-t="feat_title">Всё что нужно для умной рекламы</h2>
+      <p class="section-sub" data-t="feat_sub">Технологии Fortune 500 теперь доступны каждому бизнесу</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card delay-1">
+        <div class="feature-icon-wrap">🤖</div>
+        <h3 data-t="f1_title">Три AI-модели соревнуются</h3>
+        <p data-t="f1_text">Claude 4, Gemini и GPT-4 независимо пишут объявления. Claude-ревьюер оценивает по 8 критериям. Проходят только 8+/10.</p>
+      </div>
+      <div class="feature-card delay-2">
+        <div class="feature-icon-wrap">🎯</div>
+        <h3 data-t="f2_title">Умный таргетинг</h3>
+        <p data-t="f2_text">Система знает 19 ниш бизнеса. Автоматически подбирает интересы, возраст, гео и формат кампании.</p>
+      </div>
+      <div class="feature-card delay-3">
+        <div class="feature-icon-wrap">🌍</div>
+        <h3 data-t="f3_title">Мультиязычные кампании</h3>
+        <p data-t="f3_text">Создайте на русском — добавьте польскую, английскую, украинскую. Каждая пишется нативно.</p>
+      </div>
+      <div class="feature-card delay-4">
+        <div class="feature-icon-wrap">🧠</div>
+        <h3 data-t="f4_title">Нишевый AI-мозг</h3>
+        <p data-t="f4_text">Система учится от каждой генерации всех пользователей. Лучшие заголовки попадают в глобальный пул.</p>
+      </div>
+      <div class="feature-card delay-5">
+        <div class="feature-icon-wrap">⚡</div>
+        <h3 data-t="f5_title">A/B тест автоматически</h3>
+        <p data-t="f5_text">3 варианта с равным бюджетом. Через 7 дней AI определяет победителя и переводит весь бюджет.</p>
+      </div>
+      <div class="feature-card delay-6">
+        <div class="feature-icon-wrap">📊</div>
+        <h3 data-t="f6_title">Аналитика и авто-оптимизация</h3>
+        <p data-t="f6_text">Бот ежедневно анализирует метрики. Плохой CPL — останавливает. Хороший ROAS — масштабирует.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- ── AI SCORE ── -->
+<section id="score">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-t="score_tag">КАЧЕСТВО ТЕКСТОВ</div>
+      <h2 data-t="score_title">Каждое объявление оценивается по 8 критериям</h2>
+      <p class="section-sub" data-t="score_sub">Методологии Ogilvy, Schwartz, Halbert, Sugarman — в одном AI-ревьюере</p>
+    </div>
+    <div class="score-grid">
+      <div class="score-visual">
+        <div class="score-header">
+          <div>
+            <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.3rem" data-t="score_label">Оценка объявления</div>
+            <div class="score-num">8.7</div>
+          </div>
+          <div class="score-badge" data-t="score_pass">✓ Прошло проверку</div>
+        </div>
+        <div class="criteria">
+          <div class="criterion">
+            <div class="criterion-header"><span class="criterion-name" data-t="c1">Стоп-скролл (Ogilvy)</span><span class="criterion-score">9.2</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="92"></div></div>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header"><span class="criterion-name" data-t="c2">Симптом ЦА (Schwartz)</span><span class="criterion-score">8.8</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="88"></div></div>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header"><span class="criterion-name" data-t="c3">Язык клиента (VoC)</span><span class="criterion-score">8.5</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header"><span class="criterion-name" data-t="c4">Скользкая горка (Sugarman)</span><span class="criterion-score">9.0</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="90"></div></div>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header"><span class="criterion-name" data-t="c5">Конкретная деталь (Carlton)</span><span class="criterion-score">8.3</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="83"></div></div>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header"><span class="criterion-name" data-t="c6">Оффер + причина (Hopkins)</span><span class="criterion-score">8.6</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="86"></div></div>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header"><span class="criterion-name" data-t="c7">Один человек (Halbert)</span><span class="criterion-score">8.9</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="89"></div></div>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header"><span class="criterion-name" data-t="c8">Соответствие Meta</span><span class="criterion-score">10</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="100"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="score-text">
+        <h3 data-t="score_title">Только лучшие объявления доходят до вас</h3>
+        <p data-t="score_sub">Слабые тексты автоматически уходят на переработку. Вы видите только то, что реально работает.</p>
+        <ul class="score-list">
+          <li data-t="sl1">Слабые объявления отправляются на доработку автоматически</li>
+          <li data-t="sl2">Только варианты с оценкой 7.5+ попадают к пользователю</li>
+          <li data-t="sl3">Запрещённые клише и выдуманные факты отсекаются жёстко</li>
+          <li data-t="sl4">С каждым раундом система становится умнее</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- ── TRUST ── -->
+<section id="trust">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-t="trust_tag">ТЕХНОЛОГИИ</div>
+      <h2 data-t="trust_title">Работает на лучших AI-моделях мира</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card delay-1">
+        <div class="trust-logo">🟣</div>
+        <div class="trust-name" data-t="t1_name">Claude 4</div>
+        <div class="trust-desc" data-t="t1_desc">Главный ревьюер и стратег</div>
+      </div>
+      <div class="trust-card delay-2">
+        <div class="trust-logo">🔵</div>
+        <div class="trust-name" data-t="t2_name">Gemini</div>
+        <div class="trust-desc" data-t="t2_desc">Генерация вариантов</div>
+      </div>
+      <div class="trust-card delay-3">
+        <div class="trust-logo">🟢</div>
+        <div class="trust-name" data-t="t3_name">GPT-4</div>
+        <div class="trust-desc" data-t="t3_desc">Генерация вариантов</div>
+      </div>
+      <div class="trust-card delay-4">
+        <div class="trust-logo">🔷</div>
+        <div class="trust-name" data-t="t4_name">Meta API</div>
+        <div class="trust-desc" data-t="t4_desc">Автозапуск кампаний</div>
+      </div>
+    </div>
+    <div class="trust-badges">
+      <div class="trust-badge"><span class="icon">🔒</span><span data-t="tb1">Ваш пароль не передаётся</span></div>
+      <div class="trust-badge"><span class="icon">🛡</span><span data-t="tb2">Данные защищены</span></div>
+      <div class="trust-badge"><span class="icon">⚡</span><span data-t="tb3">GDPR совместимо</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- ── CTA ── -->
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="container">
+    <div class="cta-box">
+      <div class="section-tag" data-t="cta_tag">НАЧНИТЕ СЕГОДНЯ</div>
+      <h2 data-t="cta_title">Готовы к умной рекламе?</h2>
+      <p data-t="cta_sub">Первая кампания — бесплатно. Подключитесь за 5 минут.</p>
+      <div class="cta-buttons">
+        <a href="https://t.me/AdPilot_bot" class="btn-primary" data-t="cta_btn">🚀 Открыть AdPilot в Telegram</a>
+      </div>
+      <p class="cta-note" data-t="cta_note">Бесплатный старт · Без карты · Отмена в любой момент</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="logo">
+      <div class="logo-icon" style="width:28px;height:28px;font-size:1rem">🚀</div>
+      <span class="logo-text" style="font-size:1rem">AdPilot</span>
+    </a>
+    <div class="footer-links">
+      <a href="privacy.html" data-t="footer_privacy">Политика конфиденциальности</a>
+      <a href="terms.html" data-t="footer_terms">Условия использования</a>
+      <a href="https://t.me/sgabelev" data-t="footer_contact">Контакт</a>
+    </div>
+    <span class="footer-copy" data-t="footer_copy">© 2026 AdPilot. Все права защищены.</span>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
