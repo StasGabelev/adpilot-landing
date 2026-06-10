@@ -41,52 +41,116 @@
 <section id="hero">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
-  <span class="floating-icon fi-1">🎯</span>
-  <span class="floating-icon fi-2">💡</span>
-  <span class="floating-icon fi-3">📊</span>
-  <span class="floating-icon fi-4">💸</span>
 
-  <div class="hero-content">
-    <div class="hero-badge">
-      <span>●</span>
-      <span data-t="badge">🚀 Powered by Claude 4 · Gemini · GPT-4</span>
+  <div class="hero-grid container">
+    <!-- Left: text -->
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span data-t="badge">Powered by Claude 4 · Gemini · GPT-4</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span data-t="hero_title_1">Реклама в Meta</span><br>
+        <span class="gradient-text" id="typewriter-word">запускается сама</span><span class="cursor"></span><br>
+        <span data-t="hero_title_3">пока вы работаете</span>
+      </h1>
+
+      <p class="hero-sub" data-t="hero_sub">
+        Расскажите о бизнесе — AI напишет объявления, настроит аудиторию и запустит кампанию. Без агентств, без курсов.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="https://t.me/AdPilot_bot" class="btn-primary" data-t="btn_start">🚀 Начать бесплатно</a>
+        <a href="#how" class="btn-secondary" data-t="btn_demo">
+          <span class="play-icon">▶</span>
+          Смотреть как работает
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-t="stat_1_num" data-count="15">15</span>
+          <span class="stat-label" data-t="stat_1_label">языков</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-t="stat_2_num" data-count="3">3</span>
+          <span class="stat-label" data-t="stat_2_label">AI-модели</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-t="stat_3_num">15 мин</span>
+          <span class="stat-label" data-t="stat_3_label">до первой кампании</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-t="stat_4_num">$0</span>
+          <span class="stat-label" data-t="stat_4_label">первая кампания</span>
+        </div>
+      </div>
     </div>
 
-    <h1 class="hero-title">
-      <span data-t="hero_title_1">AI-агент который</span><br>
-      <span class="gradient-text" id="typewriter-word">запускает рекламу</span><span class="cursor"></span><br>
-      <span data-t="hero_title_3">в Meta за вас</span>
-    </h1>
-
-    <p class="hero-sub" data-t="hero_sub">
-      Опишите бизнес — AI напишет объявления, подберёт аудиторию и запустит кампанию
-    </p>
-
-    <div class="hero-buttons">
-      <a href="https://t.me/AdPilot_bot" class="btn-primary" data-t="btn_start">🚀 Начать бесплатно</a>
-      <a href="#how" class="btn-secondary" data-t="btn_demo">Смотреть как работает</a>
-    </div>
-
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-num" data-t="stat_1_num" data-count="3">3</span>
-        <span class="stat-label" data-t="stat_1_label">AI-модели</span>
+    <!-- Right: chat demo -->
+    <div class="hero-right">
+      <div class="chat-phone">
+        <div class="phone-notch"></div>
+        <div class="chat-header">
+          <div class="chat-avatar">🤖</div>
+          <div class="chat-info">
+            <div class="chat-name">AdPilot</div>
+            <div class="chat-online" data-t="chat_online">● онлайн</div>
+          </div>
+        </div>
+        <div class="chat-body" id="chatBody">
+          <div class="chat-msg user msg-1" data-t="cm1">Привет! У меня кофейня в Варшаве</div>
+          <div class="chat-msg bot msg-2" data-t="cm2">Отлично! Что делает вашу кофейню особенной?</div>
+          <div class="chat-msg user msg-3" data-t="cm3">Specialty coffee и авторские завтраки</div>
+          <div class="chat-msg bot msg-4" data-t="cm4">
+            <span>🔍 Анализирую нишу и конкурентов...</span>
+            <div class="typing-dots"><span></span><span></span><span></span></div>
+          </div>
+          <div class="chat-msg bot msg-5">
+            <div class="result-card">
+              <div class="result-line"><span class="rc-check">✓</span> <span data-t="cm5a">3 объявления написаны</span></div>
+              <div class="result-line"><span class="rc-check">✓</span> <span data-t="cm5b">Аудитория настроена</span></div>
+              <div class="result-line rc-score"><span data-t="cm5c">Оценка AI:</span> <strong>9.2/10</strong></div>
+            </div>
+          </div>
+          <div class="chat-msg bot msg-6">
+            <a href="#" class="chat-launch-btn" data-t="cm6">🚀 Запустить в Meta</a>
+          </div>
+        </div>
       </div>
-      <div class="stat-item">
-        <span class="stat-num" data-t="stat_2_num" data-count="19">19</span>
-        <span class="stat-label" data-t="stat_2_label">Ниш бизнеса</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num" data-t="stat_3_num">5</span>
-        <span class="stat-label" data-t="stat_3_label">Языков</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num" data-t="stat_4_num">A/B</span>
-        <span class="stat-label" data-t="stat_4_label">Авто-тест</span>
-      </div>
+      <div class="phone-glow"></div>
     </div>
   </div>
 </section>
+
+<!-- ── PROOF BAR ── -->
+<div class="proof-bar">
+  <div class="proof-inner">
+    <div class="proof-item">
+      <span class="proof-icon">⚡</span>
+      <span data-t="pb1">В 10× быстрее агентства</span>
+    </div>
+    <div class="proof-sep">·</div>
+    <div class="proof-item">
+      <span class="proof-icon">💰</span>
+      <span data-t="pb2">Экономия $500+ в месяц</span>
+    </div>
+    <div class="proof-sep">·</div>
+    <div class="proof-item">
+      <span class="proof-icon">🌍</span>
+      <span data-t="pb3">15 европейских языков</span>
+    </div>
+    <div class="proof-sep">·</div>
+    <div class="proof-item">
+      <span class="proof-icon">🔒</span>
+      <span data-t="pb4">Без доступа к вашему паролю</span>
+    </div>
+  </div>
+</div>
 
 <div class="glow-divider"></div>
 
@@ -96,26 +160,70 @@
     <div class="section-header">
       <div class="section-tag" data-t="how_tag">КАК ЭТО РАБОТАЕТ</div>
       <h2 data-t="how_title">Три шага до запуска рекламы</h2>
-      <p class="section-sub" data-t="how_sub">Никаких агентств, никакой сложности.</p>
+      <p class="section-sub" data-t="how_sub">Никаких агентств, никакой сложности. Просто расскажите о бизнесе.</p>
     </div>
     <div class="steps">
       <div class="step delay-1">
         <div class="step-num" data-t="step1_num">ШАГ 1</div>
-        <div class="step-icon" data-t="step1_icon">📋</div>
+        <div class="step-icon">📋</div>
         <h3 data-t="step1_title">Расскажите о бизнесе</h3>
-        <p data-t="step1_text">Ответьте на вопросы AI-консультанта в Telegram. Занимает 5-10 минут.</p>
+        <p data-t="step1_text">Ответьте на вопросы AI-консультанта в Telegram. Что продаёте, кому, где. Занимает 5–10 минут.</p>
       </div>
+      <div class="steps-arrow">→</div>
       <div class="step delay-3">
         <div class="step-num" data-t="step2_num">ШАГ 2</div>
-        <div class="step-icon" data-t="step2_icon">🤖</div>
+        <div class="step-icon">🤖</div>
         <h3 data-t="step2_title">AI создаёт кампанию</h3>
-        <p data-t="step2_text">Claude, Gemini и GPT-4 соревнуются. Claude-ревьюер отбирает только 8+/10.</p>
+        <p data-t="step2_text">Claude, Gemini и GPT-4 соревнуются. Claude-ревьюер отбирает только объявления с оценкой 8+/10.</p>
       </div>
+      <div class="steps-arrow">→</div>
       <div class="step delay-5">
         <div class="step-num" data-t="step3_num">ШАГ 3</div>
-        <div class="step-icon" data-t="step3_icon">🚀</div>
-        <h3 data-t="step3_title">Запуск в Meta одним кликом</h3>
-        <p data-t="step3_text">AdPilot сам создаёт кампанию, группы объявлений и загружает тексты.</p>
+        <div class="step-icon">🚀</div>
+        <h3 data-t="step3_title">Запуск одним кликом</h3>
+        <p data-t="step3_text">Нажмите «Запустить» — AdPilot создаст кампанию, группы объявлений и загрузит тексты в Meta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- ── RESULTS ── -->
+<section id="results">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-t="res_tag">ЧТО ВЫ ПОЛУЧАЕТЕ</div>
+      <h2 data-t="res_title">Конкретные результаты, не обещания</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card-big delay-1">
+        <div class="rcb-before" data-t="rcb1_before">Раньше</div>
+        <div class="rcb-value old" data-t="rcb1_old">4–6 часов</div>
+        <div class="rcb-arrow">↓</div>
+        <div class="rcb-value new" data-t="rcb1_new">15 минут</div>
+        <div class="rcb-label" data-t="rcb1_label">на запуск кампании</div>
+      </div>
+      <div class="result-card-big delay-2">
+        <div class="rcb-before" data-t="rcb2_before">Раньше</div>
+        <div class="rcb-value old" data-t="rcb2_old">$500–2000/мес</div>
+        <div class="rcb-arrow">↓</div>
+        <div class="rcb-value new" data-t="rcb2_new">$0 первая</div>
+        <div class="rcb-label" data-t="rcb2_label">стоимость запуска</div>
+      </div>
+      <div class="result-card-big delay-3">
+        <div class="rcb-before" data-t="rcb3_before">Junior копирайтер</div>
+        <div class="rcb-value old" data-t="rcb3_old">1–2 объявления</div>
+        <div class="rcb-arrow">↓</div>
+        <div class="rcb-value new" data-t="rcb3_new">9+ вариантов</div>
+        <div class="rcb-label" data-t="rcb3_label">с оценкой 8+/10 по Ogilvy</div>
+      </div>
+      <div class="result-card-big delay-4">
+        <div class="rcb-before" data-t="rcb4_before">Агентство</div>
+        <div class="rcb-value old" data-t="rcb4_old">1 язык</div>
+        <div class="rcb-arrow">↓</div>
+        <div class="rcb-value new" data-t="rcb4_new">15 языков</div>
+        <div class="rcb-label" data-t="rcb4_label">нативные тексты, не переводы</div>
       </div>
     </div>
   </div>
@@ -129,38 +237,38 @@
     <div class="section-header">
       <div class="section-tag" data-t="feat_tag">ВОЗМОЖНОСТИ</div>
       <h2 data-t="feat_title">Всё что нужно для умной рекламы</h2>
-      <p class="section-sub" data-t="feat_sub">Технологии Fortune 500 теперь доступны каждому бизнесу</p>
+      <p class="section-sub" data-t="feat_sub">Технологии Fortune 500 — теперь доступны каждому бизнесу</p>
     </div>
     <div class="features-grid">
       <div class="feature-card delay-1">
         <div class="feature-icon-wrap">🤖</div>
         <h3 data-t="f1_title">Три AI-модели соревнуются</h3>
-        <p data-t="f1_text">Claude 4, Gemini и GPT-4 независимо пишут объявления. Claude-ревьюер оценивает по 8 критериям. Проходят только 8+/10.</p>
+        <p data-t="f1_text">Claude 4, Gemini и GPT-4 независимо пишут объявления. Claude-ревьюер оценивает по 8 критериям топ-копирайтеров мира. Проходят только 8+/10.</p>
       </div>
       <div class="feature-card delay-2">
         <div class="feature-icon-wrap">🎯</div>
         <h3 data-t="f2_title">Умный таргетинг</h3>
-        <p data-t="f2_text">Система знает 19 ниш бизнеса. Автоматически подбирает интересы, возраст, гео и формат кампании.</p>
+        <p data-t="f2_text">Система знает 19 ниш бизнеса. Автоматически подбирает интересы, возраст, гео и оптимальный формат кампании для вашей аудитории.</p>
       </div>
       <div class="feature-card delay-3">
         <div class="feature-icon-wrap">🌍</div>
-        <h3 data-t="f3_title">Мультиязычные кампании</h3>
-        <p data-t="f3_text">Создайте на русском — добавьте польскую, английскую, украинскую. Каждая пишется нативно.</p>
+        <h3 data-t="f3_title">15 языков нативно</h3>
+        <p data-t="f3_text">Польский, английский, украинский, немецкий, французский и ещё 10 языков ЕС. Каждое объявление пишется нативно, а не переводится.</p>
       </div>
       <div class="feature-card delay-4">
         <div class="feature-icon-wrap">🧠</div>
-        <h3 data-t="f4_title">Нишевый AI-мозг</h3>
-        <p data-t="f4_text">Система учится от каждой генерации всех пользователей. Лучшие заголовки попадают в глобальный пул.</p>
+        <h3 data-t="f4_title">Коллективный AI-интеллект</h3>
+        <p data-t="f4_text">Лучшие заголовки каждой ниши попадают в общий пул. Новые клиенты сразу получают проверенные формулы — система умнеет от каждой кампании.</p>
       </div>
       <div class="feature-card delay-5">
         <div class="feature-icon-wrap">⚡</div>
         <h3 data-t="f5_title">A/B тест автоматически</h3>
-        <p data-t="f5_text">3 варианта с равным бюджетом. Через 7 дней AI определяет победителя и переводит весь бюджет.</p>
+        <p data-t="f5_text">Запускает 3 варианта с равным бюджетом. Через 7 дней AI определяет победителя и переводит весь бюджет на него — без вашего участия.</p>
       </div>
       <div class="feature-card delay-6">
         <div class="feature-icon-wrap">📊</div>
-        <h3 data-t="f6_title">Аналитика и авто-оптимизация</h3>
-        <p data-t="f6_text">Бот ежедневно анализирует метрики. Плохой CPL — останавливает. Хороший ROAS — масштабирует.</p>
+        <h3 data-t="f6_title">Авто-оптимизация</h3>
+        <p data-t="f6_text">Бот ежедневно анализирует метрики. Плохой CPL — останавливает. Хороший ROAS — масштабирует. Ваш бюджет всегда работает на максимум.</p>
       </div>
     </div>
   </div>
@@ -180,8 +288,8 @@
       <div class="score-visual">
         <div class="score-header">
           <div>
-            <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.3rem" data-t="score_label">Оценка объявления</div>
-            <div class="score-num">8.7</div>
+            <div class="score-label-text" data-t="score_label">Оценка объявления</div>
+            <div class="score-num" id="scoreNum">0</div>
           </div>
           <div class="score-badge" data-t="score_pass">✓ Прошло проверку</div>
         </div>
@@ -221,15 +329,81 @@
         </div>
       </div>
       <div class="score-text">
-        <h3 data-t="score_title">Только лучшие объявления доходят до вас</h3>
-        <p data-t="score_sub">Слабые тексты автоматически уходят на переработку. Вы видите только то, что реально работает.</p>
+        <h3 data-t="score_txt_title">Только лучшие объявления доходят до вас</h3>
+        <p data-t="score_txt_sub">Слабые тексты автоматически уходят на переработку. Вы видите только то, что реально работает в вашей нише.</p>
         <ul class="score-list">
           <li data-t="sl1">Слабые объявления отправляются на доработку автоматически</li>
-          <li data-t="sl2">Только варианты с оценкой 7.5+ попадают к пользователю</li>
+          <li data-t="sl2">Только варианты с оценкой 7.5+ попадают к вам</li>
           <li data-t="sl3">Запрещённые клише и выдуманные факты отсекаются жёстко</li>
           <li data-t="sl4">С каждым раундом система становится умнее</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- ── COMPARE ── -->
+<section id="compare">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-t="cmp_tag">СРАВНЕНИЕ</div>
+      <h2 data-t="cmp_title">AdPilot vs Агентство vs Самостоятельно</h2>
+      <p class="section-sub" data-t="cmp_sub">Почему тысячи бизнесов выбирают AI-агента</p>
+    </div>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th data-t="ct_h0"></th>
+            <th class="ct-highlight">
+              <div class="ct-badge" data-t="ct_best">Лучший выбор</div>
+              <span>AdPilot</span>
+            </th>
+            <th data-t="ct_h2">Агентство</th>
+            <th data-t="ct_h3">Своими силами</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-t="ct_r1">Стоимость запуска</td>
+            <td class="ct-highlight ct-green" data-t="ct_r1a">Бесплатно</td>
+            <td data-t="ct_r1b">$500–2000/мес</td>
+            <td data-t="ct_r1c">Бесплатно</td>
+          </tr>
+          <tr>
+            <td data-t="ct_r2">Время до запуска</td>
+            <td class="ct-highlight ct-green" data-t="ct_r2a">15 минут</td>
+            <td data-t="ct_r2b">2–4 недели</td>
+            <td data-t="ct_r2c">3–5 часов</td>
+          </tr>
+          <tr>
+            <td data-t="ct_r3">Качество текстов</td>
+            <td class="ct-highlight ct-green" data-t="ct_r3a">AI + 8 критериев</td>
+            <td data-t="ct_r3b">Зависит от исполнителя</td>
+            <td data-t="ct_r3c">Зависит от вас</td>
+          </tr>
+          <tr>
+            <td data-t="ct_r4">A/B тестирование</td>
+            <td class="ct-highlight ct-green" data-t="ct_r4a">✓ Автоматически</td>
+            <td data-t="ct_r4b">Доп. оплата</td>
+            <td data-t="ct_r4c">Вручную</td>
+          </tr>
+          <tr>
+            <td data-t="ct_r5">Языки</td>
+            <td class="ct-highlight ct-green" data-t="ct_r5a">15 нативно</td>
+            <td data-t="ct_r5b">1–2</td>
+            <td data-t="ct_r5c">1</td>
+          </tr>
+          <tr>
+            <td data-t="ct_r6">Работает 24/7</td>
+            <td class="ct-highlight ct-green" data-t="ct_r6a">✓ Всегда</td>
+            <td data-t="ct_r6b">Рабочие часы</td>
+            <td data-t="ct_r6c">✗</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -245,22 +419,22 @@
     </div>
     <div class="trust-grid">
       <div class="trust-card delay-1">
-        <div class="trust-logo">🟣</div>
+        <div class="trust-logo claude-logo">C</div>
         <div class="trust-name" data-t="t1_name">Claude 4</div>
         <div class="trust-desc" data-t="t1_desc">Главный ревьюер и стратег</div>
       </div>
       <div class="trust-card delay-2">
-        <div class="trust-logo">🔵</div>
+        <div class="trust-logo gemini-logo">G</div>
         <div class="trust-name" data-t="t2_name">Gemini</div>
         <div class="trust-desc" data-t="t2_desc">Генерация вариантов</div>
       </div>
       <div class="trust-card delay-3">
-        <div class="trust-logo">🟢</div>
+        <div class="trust-logo gpt-logo">GP</div>
         <div class="trust-name" data-t="t3_name">GPT-4</div>
         <div class="trust-desc" data-t="t3_desc">Генерация вариантов</div>
       </div>
       <div class="trust-card delay-4">
-        <div class="trust-logo">🔷</div>
+        <div class="trust-logo meta-logo">M</div>
         <div class="trust-name" data-t="t4_name">Meta API</div>
         <div class="trust-desc" data-t="t4_desc">Автозапуск кампаний</div>
       </div>
@@ -275,16 +449,51 @@
 
 <div class="glow-divider"></div>
 
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-t="faq_tag">ВОПРОСЫ</div>
+      <h2 data-t="faq_title">Часто задаваемые вопросы</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" data-t="faq1_q">Нужны ли технические знания для работы с AdPilot?</button>
+        <div class="faq-a"><p data-t="faq1_a">Нет. Вся работа ведётся через обычный Telegram-чат. Вы просто отвечаете на вопросы, как при разговоре с консультантом. AI делает всё остальное: пишет тексты, настраивает таргетинг, создаёт кампанию в Meta.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-t="faq2_q">Я передаю AdPilot доступ к своему рекламному кабинету?</button>
+        <div class="faq-a"><p data-t="faq2_a">Вы авторизуете AdPilot через официальный Meta Business API — это безопасный стандартный способ. Ваш пароль от Facebook никуда не передаётся. Вы можете отозвать доступ в любой момент.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-t="faq3_q">Сколько стоит использование AdPilot?</button>
+        <div class="faq-a"><p data-t="faq3_a">Первая кампания — полностью бесплатно, карта не нужна. Дальнейшие условия зависят от вашего тарифа. Вы платите только за рекламный бюджет напрямую в Meta — AdPilot не берёт процент от бюджета.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-t="faq4_q">Для каких ниш подходит AdPilot?</button>
+        <div class="faq-a"><p data-t="faq4_a">Система оптимизирована для 19 ниш: рестораны и кафе, салоны красоты, фитнес, онлайн-курсы, недвижимость, одежда и аксессуары, медицина, юридические услуги, автосервис и другие. Для каждой ниши — свои проверенные формулы объявлений.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" data-t="faq5_q">Что если объявления мне не понравятся?</button>
+        <div class="faq-a"><p data-t="faq5_a">Вы всегда видите объявления перед запуском и можете попросить сгенерировать новые варианты или внести коррективы через Telegram. Кампания запускается только после вашего подтверждения.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
 <!-- ── CTA ── -->
 <section id="cta">
   <div class="cta-bg"></div>
   <div class="container">
     <div class="cta-box">
+      <div class="cta-glow"></div>
       <div class="section-tag" data-t="cta_tag">НАЧНИТЕ СЕГОДНЯ</div>
-      <h2 data-t="cta_title">Готовы к умной рекламе?</h2>
-      <p data-t="cta_sub">Первая кампания — бесплатно. Подключитесь за 5 минут.</p>
+      <h2 data-t="cta_title">Ваша первая AI-кампания — бесплатно</h2>
+      <p data-t="cta_sub">Подключитесь за 5 минут. Никаких карт, никаких обязательств.</p>
       <div class="cta-buttons">
-        <a href="https://t.me/AdPilot_bot" class="btn-primary" data-t="cta_btn">🚀 Открыть AdPilot в Telegram</a>
+        <a href="https://t.me/AdPilot_bot" class="btn-primary btn-large" data-t="cta_btn">🚀 Открыть AdPilot в Telegram</a>
       </div>
       <p class="cta-note" data-t="cta_note">Бесплатный старт · Без карты · Отмена в любой момент</p>
     </div>
