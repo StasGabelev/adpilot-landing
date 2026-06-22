@@ -1296,51 +1296,51 @@ footer {
 @media (max-width: 1024px) { .sp-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .sp-grid { grid-template-columns: 1fr; } }
 
-/* ── TikTok Teaser ── */
-.tiktok-teaser {
-  background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(124,58,237,0.08), rgba(0,0,0,0.6));
-  border-top: 1px solid rgba(255,255,255,0.06);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding: 1.2rem 2rem;
-  overflow: hidden;
-  position: relative;
-}
-.tiktok-teaser::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(124,58,237,0.03) 60px, rgba(124,58,237,0.03) 61px);
-}
-.tt-inner {
+/* ── TikTok Fixed Bottom Ticker ── */
+body { padding-bottom: 38px; }
+
+.tiktok-ticker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 38px;
+  background: #000;
+  border-top: 1px solid rgba(254, 44, 85, 0.4);
   display: flex;
   align-items: center;
-  gap: 1rem;
-  max-width: 900px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  position: relative;
+  overflow: hidden;
 }
-.tt-soon {
-  background: linear-gradient(135deg, #fe2c55, #ff0050);
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: ticker-scroll 36s linear infinite;
+}
+
+.ticker-seg {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.72);
+  padding: 0 0.5rem;
+}
+
+.tk-badge {
+  background: #fe2c55;
   color: #fff;
-  font-size: 0.65rem;
+  font-size: 0.58rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
-  padding: 0.25rem 0.7rem;
-  border-radius: 20px;
-  white-space: nowrap;
-  flex-shrink: 0;
+  letter-spacing: 0.1em;
+  padding: 2px 7px;
+  border-radius: 10px;
+  margin-right: 6px;
+  vertical-align: middle;
 }
-.tt-icon { font-size: 1.4rem; flex-shrink: 0; }
-.tt-text { font-size: 0.9rem; color: var(--text-muted); flex: 1; min-width: 200px; }
-.tt-stay {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--primary-light);
-  white-space: nowrap;
-  opacity: 0.85;
-}
-@media (max-width: 600px) {
-  .tt-text { font-size: 0.82rem; }
-  .tt-stay { display: none; }
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
