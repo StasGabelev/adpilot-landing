@@ -1295,3 +1295,52 @@ footer {
 .sp-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
 @media (max-width: 1024px) { .sp-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .sp-grid { grid-template-columns: 1fr; } }
+
+/* ── TikTok Teaser ── */
+.tiktok-teaser {
+  background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(124,58,237,0.08), rgba(0,0,0,0.6));
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 1.2rem 2rem;
+  overflow: hidden;
+  position: relative;
+}
+.tiktok-teaser::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(124,58,237,0.03) 60px, rgba(124,58,237,0.03) 61px);
+}
+.tt-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  position: relative;
+}
+.tt-soon {
+  background: linear-gradient(135deg, #fe2c55, #ff0050);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tt-icon { font-size: 1.4rem; flex-shrink: 0; }
+.tt-text { font-size: 0.9rem; color: var(--text-muted); flex: 1; min-width: 200px; }
+.tt-stay {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  white-space: nowrap;
+  opacity: 0.85;
+}
+@media (max-width: 600px) {
+  .tt-text { font-size: 0.82rem; }
+  .tt-stay { display: none; }
+}
