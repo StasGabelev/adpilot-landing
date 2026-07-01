@@ -114,6 +114,7 @@ const T = {
     pr_f8: "✅ 19 ниш бизнеса с AI-знаниями",
     pr_f9: "✅ Ретаргетинг и лид-формы",
     pr_vs: "Сравните: агентство берёт €500–2000/мес за один аккаунт",
+    pr_founder: "👤 Личное подключение от основателя — в течение 1 часа после регистрации",
     pr_btn: "🚀 Начать бесплатно — 7 дней",
     pr_note: "Без карты · 7 дней бесплатно · Затем €49/мес · Отмена в любой момент",
     // Social Proof
@@ -295,6 +296,7 @@ const T = {
     pr_f8: "✅ 19 ніш бізнесу з AI-знаннями",
     pr_f9: "✅ Ретаргетинг та лід-форми",
     pr_vs: "Порівняйте: агентство бере €500–2000/міс за один кабінет",
+    pr_founder: "👤 Особисте підключення від засновника — протягом 1 години після реєстрації",
     pr_btn: "🚀 Почати безкоштовно — 7 днів",
     pr_note: "Без картки · 7 днів безкоштовно · Потім €49/міс · Скасування будь-коли",
     // Social Proof
@@ -476,6 +478,7 @@ const T = {
     pr_f8: "✅ 19 business niches with AI expertise",
     pr_f9: "✅ Retargeting and lead forms",
     pr_vs: "Compare: agencies charge €500–2000/month for a single account",
+    pr_founder: "👤 Personal onboarding from the founder — within 1 hour of signing up",
     pr_btn: "🚀 Start Free — 7 Days",
     pr_note: "No card required · 7 days free · Then €49/mo · Cancel anytime",
     // Social Proof
@@ -657,6 +660,7 @@ const T = {
     pr_f8: "✅ 19 nisz biznesowych z wiedzą AI",
     pr_f9: "✅ Retargeting i formularze leadów",
     pr_vs: "Porównaj: agencja pobiera €500–2000/mies. za jedno konto",
+    pr_founder: "👤 Osobiste wdrożenie od założyciela — w ciągu 1 godziny od rejestracji",
     pr_btn: "🚀 Zacznij za darmo — 7 dni",
     pr_note: "Bez karty · 7 dni za darmo · Potem €49/mies · Anuluj kiedy chcesz",
     // Social Proof
