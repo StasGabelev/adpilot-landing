@@ -835,6 +835,7 @@ h2 {
 .gemini-logo { background: linear-gradient(135deg, #1d4ed8, #06b6d4); }
 .gpt-logo { background: linear-gradient(135deg, #059669, #10b981); font-size: 0.9rem; }
 .meta-logo { background: linear-gradient(135deg, #1877f2, #0ea5e9); }
+.tiktok-logo { background: linear-gradient(135deg, #010101, #25f4ee, #fe2c55); }
 
 .trust-name { font-weight: 800; font-size: 0.95rem; margin-bottom: 0.3rem; }
 .trust-desc { color: var(--text-muted); font-size: 0.8rem; }
