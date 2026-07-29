@@ -18,6 +18,12 @@ const requiredTermsCopy = {
   pl: ['Aktualizacja: 29 lipca 2026', 'Bezpłatna analiza i abonament', '€150'],
   uk: ['Оновлено: 29 липня 2026 року', 'Безкоштовний розбір і підписка', '€150']
 };
+const requiredPreviewContract = {
+  ru: ['Рекомендуемая цель: Вовлечённость', 'Основной путь клиента: Instagram Direct', 'Точная аудитория, география, бюджет, структура кампании, объявления и медиа открываются после подписки.'],
+  en: ['Recommended objective: Engagement', 'Primary customer path: Instagram Direct', 'Exact audience, geography, budget, campaign structure, ads and media unlock after subscription.'],
+  pl: ['Zalecany cel: Aktywność', 'Główna ścieżka klienta: Instagram Direct', 'Dokładna grupa, geografia, budżet, struktura kampanii, reklamy i media są dostępne po opłaceniu abonamentu.'],
+  uk: ['Рекомендована ціль: Залученість', 'Основний шлях клієнта: Instagram Direct', 'Точна аудиторія, географія, бюджет, структура кампанії, оголошення та медіа відкриваються після підписки.']
+};
 const forbiddenCommercialCopy = [
   /7[- ]day free trial/i,
   /7 days free/i,
@@ -35,7 +41,14 @@ const forbiddenCommercialCopy = [
   /own OpenRouter key/i,
   /własnego klucza OpenRouter/i,
   /ваш(?:его)? ключ(?:а)? OpenRouter/i,
-  /вашого ключа OpenRouter/i
+  /вашого ключа OpenRouter/i,
+  /19 (?:niche|business|categor)/i,
+  /19 (?:ниш|категор)/i,
+  /19 (?:baz wiedzy|kategor)/i,
+  /business map, strengths and gaps/i,
+  /карту бизнеса, сильные стороны и пробелы/i,
+  /mapę biznesu, mocne strony i braki/i,
+  /карту бізнесу, сильні сторони й прогалини/i
 ];
 
 function check(condition, message) {
@@ -64,6 +77,9 @@ for (const locale of locales) {
   check(!/guarantee|гарантиру|gwarant|гарантує/i.test(html) || /does not guarantee|не гарантирует|nie gwarantuje|не гарантує/i.test(html), `${locale}: unqualified guarantee claim`);
   for (const phrase of requiredCommercialCopy[locale]) {
     check(html.includes(phrase), `${locale}: missing required commercial copy "${phrase}"`);
+  }
+  for (const phrase of requiredPreviewContract[locale]) {
+    check(html.includes(phrase), `${locale}: free preview contract drifted from runtime "${phrase}"`);
   }
   for (const pattern of forbiddenCommercialCopy) {
     check(!pattern.test(html), `${locale}: stale trial or BYOK promise matches ${pattern}`);
