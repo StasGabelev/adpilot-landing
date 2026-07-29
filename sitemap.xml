@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://adpilot.projectstudio-big.net/ru/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/en/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/pl/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/uk/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/ru/privacy/</loc><priority>0.3</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/ru/terms/</loc><priority>0.3</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/ru/company/</loc><priority>0.3</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/en/privacy/</loc><priority>0.3</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/en/terms/</loc><priority>0.3</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/en/company/</loc><priority>0.3</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/pl/privacy/</loc><priority>0.3</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/pl/terms/</loc><priority>0.3</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/pl/company/</loc><priority>0.3</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/uk/privacy/</loc><priority>0.3</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/uk/terms/</loc><priority>0.3</priority></url>
+  <url><loc>https://adpilot.projectstudio-big.net/uk/company/</loc><priority>0.3</priority></url>
+</urlset>
