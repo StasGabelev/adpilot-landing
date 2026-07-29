@@ -108,6 +108,9 @@ check(!css.includes('@keyframes'), 'CSS: continuous animation unexpectedly prese
 
 const js = await readFile(join(root, 'assets', 'main.js'), 'utf8');
 check(js.includes('slice(0, 64)'), 'JS: Telegram start token length is not capped');
+check(js.includes('`_c_${campaign}`'), 'JS: UTM campaign lacks an unambiguous Telegram marker');
+check(js.includes('`_x_${content}`'), 'JS: UTM content lacks an unambiguous Telegram marker');
+check(js.includes('/^[a-z0-9_]{1,30}$/'), 'JS: landing start base is not strictly validated');
 check(!js.includes('localStorage'), 'JS: locale must not depend on localStorage');
 
 const config = JSON.parse(await readFile(join(root, 'vercel.json'), 'utf8'));

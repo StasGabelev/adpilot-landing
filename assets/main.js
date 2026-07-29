@@ -41,23 +41,27 @@
     });
   });
 
-  function safeToken(value, maxLength) {
+  function safeUtmToken(value, maxLength) {
     return (value || '')
       .toLowerCase()
       .normalize('NFKD')
-      .replace(/[^a-z0-9_-]+/g, '_')
-      .replace(/^_+|_+$/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
       .slice(0, maxLength);
   }
 
   const query = new URLSearchParams(window.location.search);
-  const campaign = safeToken(query.get('utm_campaign'), 22);
-  const content = safeToken(query.get('utm_content'), 12);
+  const campaign = safeUtmToken(query.get('utm_campaign'), 22);
+  const content = safeUtmToken(query.get('utm_content'), 12);
 
   document.querySelectorAll('[data-telegram-start]').forEach((link) => {
-    const base = safeToken(link.dataset.telegramStart, 30);
-    const parts = [base, campaign, content].filter(Boolean);
-    const token = parts.join('_').slice(0, 64);
+    const base = /^[a-z0-9_]{1,30}$/.test(link.dataset.telegramStart || '')
+      ? link.dataset.telegramStart
+      : '';
+    if (!base) return;
+    const campaignPart = campaign ? `_c_${campaign}` : '';
+    const contentPart = content ? `_x_${content}` : '';
+    const token = `${base}${campaignPart}${contentPart}`.slice(0, 64);
     link.href = `https://t.me/AdPilotTop_bot?start=${token}`;
 
     link.addEventListener('click', () => {

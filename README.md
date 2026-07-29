@@ -25,11 +25,12 @@ The validator blocks:
 Every Telegram CTA carries a start token in this format:
 
 ```text
-lp_<locale>_<position>_fsp
+lp_<locale>_<position>_fsp[_c_<utm-campaign>][_x_<utm-content>]
 ```
 
-The browser script may append sanitised `utm_campaign` and `utm_content`
-values while keeping Telegram's payload within 64 characters.
+The browser script appends optional, sanitised `utm_campaign` and
+`utm_content` values behind explicit `_c_` and `_x_` markers while keeping
+Telegram's payload within 64 characters.
 
 ## Safe rollout
 
