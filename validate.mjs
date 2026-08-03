@@ -34,7 +34,10 @@ for (const locale of locales) {
   check((html.match(/<section/g) || []).length >= 9, `${locale}: page structure is incomplete`);
   check(!/7 days|7 дней|7 dni|7 днів|14 days|14 дней|14 dni|14 днів|free trial|пробн(?:ый|ого)|okres próbny|пробн(?:ий|ого)|OpenRouter/i.test(html), `${locale}: stale trial or personal-key copy`);
   check(!html.includes('$150'), `${locale}: stale dollar price`);
-  check(!/€150\s*\/\s*(?:month|месяц|miesiąc|місяць)/i.test(html), `${locale}: paid access is incorrectly described as monthly auto-renewal`);
+  check(/Stripe/i.test(html), `${locale}: recurring Stripe option is missing`);
+  check(/crypto|крипто|krypto|криптовалют/i.test(html), `${locale}: one-time crypto option is missing`);
+  check(/€150\s*\/\s*(?:month|месяц|miesiąc|місяць)/i.test(html), `${locale}: monthly Stripe price is missing`);
+  check(!/Renewal is not automatic|Продление не автоматическое|Odnowienie nie jest automatyczne|Продовження не автоматичне/i.test(html), `${locale}: stale blanket no-renewal claim`);
   check(html.includes('100') && /AI/i.test(html), `${locale}: included AI credit balance is missing`);
   check(html.includes('30'), `${locale}: 30-day access period is missing`);
   check(!/15 (native |нативн|język|мов)/i.test(html), `${locale}: unsupported 15-language claim`);
@@ -58,6 +61,8 @@ for (const locale of locales) {
       if (type === 'terms') {
         check(!/7 days|7 дней|7 dni|7 днів|free trial|пробн(?:ый|ого)|okres próbny|пробн(?:ий|ого)|OpenRouter/i.test(legalHtml), `${locale}/${type}: stale commercial terms`);
         check(legalHtml.includes('150') && legalHtml.includes('30'), `${locale}/${type}: current paid-access terms are missing`);
+        check(/Stripe/i.test(legalHtml), `${locale}/${type}: recurring Stripe terms are missing`);
+        check(/crypto|крипто|krypto|криптовалют/i.test(legalHtml), `${locale}/${type}: one-time crypto terms are missing`);
       }
     } catch {
       failures.push(`${locale}: missing ${type} page`);
