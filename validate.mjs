@@ -70,6 +70,38 @@ for (const locale of locales) {
   }
 }
 
+const israelFile = join(root, 'ru', 'israel', 'index.html');
+const israelHtml = await readFile(israelFile, 'utf8');
+check(israelHtml.includes('<html lang="ru">'), 'ru/israel: missing html lang');
+check(israelHtml.includes('<meta name="robots" content="noindex,follow">'), 'ru/israel: page must remain noindex');
+check(israelHtml.includes('<link rel="canonical" href="https://adpilot.projectstudio-big.net/ru/israel/">'), 'ru/israel: wrong canonical');
+check((israelHtml.match(/data-telegram-start=/g) || []).length === 4, 'ru/israel: expected four attributed Telegram CTAs');
+for (const placement of ['nav', 'hero', 'price', 'final']) {
+  const payload = `lp_ru_${placement}_fsp`;
+  check(israelHtml.includes(`data-telegram-start="${payload}"`), `ru/israel: missing ${placement} payload`);
+  check(israelHtml.includes(`?start=${payload}`), `ru/israel: missing ${placement} Telegram link`);
+}
+check(!israelHtml.includes('href="https://t.me/AdPilotTop_bot"'), 'ru/israel: unattributed Telegram link');
+check(!israelHtml.includes('первая кампания бесплатно'), 'ru/israel: forbidden free-campaign claim');
+check(/бесплатн(?:ый|ого) стратегическ(?:ий|ого) разбор бизнеса/i.test(israelHtml), 'ru/israel: strategic review offer is missing');
+check(/€150\s*\/\s*месяц/i.test(israelHtml), 'ru/israel: recurring Stripe price is missing');
+check(/автоматическое списание €150 каждый месяц до отмены/i.test(israelHtml), 'ru/israel: recurring Stripe disclosure is missing');
+check(/€150 за 30 дней без автопродления/i.test(israelHtml), 'ru/israel: crypto terms are missing');
+check(israelHtml.includes('100 AI-кредитов'), 'ru/israel: included AI credits are missing');
+check(israelHtml.includes('Рекламный бюджет оплачивается отдельно'), 'ru/israel: separate ad spend disclosure is missing');
+check(israelHtml.includes('не читает переписку') && israelHtml.includes('не отвечает клиентам'), 'ru/israel: WhatsApp boundary is missing');
+check(/не гарантирует CPL, продажи или окупаемость/i.test(israelHtml), 'ru/israel: outcome disclaimer is missing');
+check(!/отч[её]т(?:ы|а)?[^.<]{0,40}каждые 6 часов/i.test(israelHtml), 'ru/israel: reports must not be promised every six hours');
+check(/Проверяет рекламные показатели каждые 6 часов/i.test(israelHtml), 'ru/israel: metric check cadence is missing');
+check(!israelHtml.includes('style="'), 'ru/israel: inline style conflicts with CSP');
+const israelIds = new Set([...israelHtml.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]));
+for (const match of israelHtml.matchAll(/href="#([^"]+)"/g)) {
+  check(israelIds.has(match[1]), `ru/israel: broken anchor #${match[1]}`);
+}
+
+const sitemapText = await readFile(join(root, 'sitemap.xml'), 'utf8');
+check(!sitemapText.includes('/ru/israel/'), 'sitemap: Israel test page must remain excluded');
+
 const css = await readFile(join(root, 'assets', 'style.css'), 'utf8');
 check(css.includes(':focus-visible'), 'CSS: missing focus-visible styles');
 check(css.includes('@media (prefers-reduced-motion: reduce)'), 'CSS: missing reduced-motion support');
@@ -80,6 +112,16 @@ check(js.includes('slice(0, 64)'), 'JS: Telegram start token length is not cappe
 check(js.includes('landingStartPattern'), 'JS: trusted landing payload is not validated');
 check(js.includes("`_c_${campaign}`") && js.includes("`_x_${content}`"), 'JS: UTM markers do not match bot parser');
 check(!js.includes('localStorage'), 'JS: locale must not depend on localStorage');
+
+const israelCampaign = 'il-ru-repair';
+const israelContent = 'static-a';
+for (const placement of ['nav', 'hero', 'price', 'final']) {
+  const base = `lp_ru_${placement}_fsp`;
+  const token = `${base}_c_${israelCampaign}_x_${israelContent}`.slice(0, 64);
+  const expected = `lp_ru_${placement}_fsp_c_il-ru-repair_x_static-a`;
+  check(token === expected, `ru/israel: wrong attributed ${placement} payload`);
+  check(token.length <= 64, `ru/israel: ${placement} payload exceeds Telegram limit`);
+}
 
 const config = JSON.parse(await readFile(join(root, 'vercel.json'), 'utf8'));
 const headerValues = config.headers?.flatMap((entry) => entry.headers || []).map((header) => header.key) || [];
